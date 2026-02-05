@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart City - Le Jeu</title>
+    <link rel="stylesheet" href="jeux.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>🏙️ Smart City - Le Jeu</h1>
+
+        <!-- Écran d'accueil -->
+        <div id="ecran-accueil">
+            <div class="regles">
+                <h2>📋 Règles du jeu</h2>
+                <ul>
+                    <li>Vous allez avoir plusieurs choix à faire pour développer votre smart city</li>
+                    <li>Votre but sera d'automatiser et de créer le meilleur système possible</li>
+                    <li>Un score affichera vos points en fonction de vos choix</li>
+                    <li>La partie s'arrêtera quand : Énergie = 100, Satisfaction = 100, Pollution = 0</li>
+                </ul>
+            </div>
+
+            <div class="input-group">
+                <label for="pseudo">Votre pseudo :</label>
+                <input type="text" id="pseudo" placeholder="Entrez votre pseudo">
+            </div>
+
+            <div class="input-group">
+                <label for="ville">Nom de votre ville :</label>
+                <input type="text" id="ville" placeholder="Entrez le nom de votre ville">
+            </div>
+
+            <button onclick="demarrerJeu()">🚀 Démarrer le jeu</button>
+        </div>
+
+        <!-- Écran de jeu -->
+        <div id="ecran-jeu" class="hidden">
+            <div id="messages"></div>
+
+            <div class="stats">
+                <div class="stat-card">
+                    <h3>🌱 Pollution</h3>
+                    <p id="stat-pollution">100</p>
+                </div>
+                <div class="stat-card">
+                    <h3>⚡ Énergie</h3>
+                    <p id="stat-energie">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>😊 Satisfaction</h3>
+                    <p id="stat-satisfaction">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>💰 Argent</h3>
+                    <p id="stat-argent">10000 €</p>
+                </div>
+                <div class="stat-card">
+                    <h3>📅 Jour</h3>
+                    <p id="stat-jour">1</p>
+                </div>
+            </div>
+
+            <h2>Menu Principal</h2>
+            <div class="menu-buttons">
+                <button onclick="afficherMateriel()">🏗️ Matériel</button>
+                <button onclick="afficherScore()">📊 Votre Score</button>
+                <button onclick="afficherAmelioration()">⬆️ Améliorer</button>
+                <button onclick="passerJour()">⏭️ Passer au jour suivant</button>
+            </div>
+
+            <!-- Section Matériel -->
+            <div id="section-materiel" class="hidden">
+                <h2>🏗️ Choisir votre matériel</h2>
+                <div class="materiel-list">
+                    <div class="materiel-item" onclick="acheterMateriel('eolienne')">
+                        <h4>🌬️ Éolienne</h4>
+                        <p>+5 pollution | +5 énergie | -1000€</p>
+                    </div>
+                    <div class="materiel-item" onclick="acheterMateriel('usine')">
+                        <h4>🏭 Usine</h4>
+                        <p>+5 pollution | +3 énergie | -5 satisfaction | -1000€</p>
+                    </div>
+                    <div class="materiel-item" onclick="acheterMateriel('transport')">
+                        <h4>🚌 Transport en commun électrique</h4>
+                        <p>-5 énergie | +5 satisfaction | -1000€</p>
+                    </div>
+                </div>
+                <button onclick="cacherSections()" style="margin-top: 20px;">← Retour au menu</button>
+            </div>
+
+            <!-- Section Amélioration -->
+            <div id="section-amelioration" class="hidden">
+                <h2>⬆️ Améliorer votre matériel</h2>
+                <p style="margin-bottom: 15px;">Niveaux actuels : Éolienne <strong id="niveau-eolienne">0</strong> |
+                    Usine <strong id="niveau-usine">0</strong> | Transport <strong id="niveau-transport">0</strong></p>
+
+                <div class="niveau-list">
+                    <div class="niveau-item" onclick="ameliorerMateriel('eolienne')">
+                        <h4>🌬️ Améliorer les éoliennes</h4>
+                        <p>1000 € par niveau</p>
+                    </div>
+                    <div class="niveau-item" onclick="ameliorerMateriel('usine')">
+                        <h4>🏭 Améliorer les usines</h4>
+                        <p>1000 € par niveau</p>
+                    </div>
+                    <div class="niveau-item" onclick="ameliorerMateriel('transport')">
+                        <h4>🚌 Améliorer les transports</h4>
+                        <p>1000 € par niveau</p>
+                    </div>
+                </div>
+                <button onclick="cacherSections()" style="margin-top: 20px;">← Retour au menu</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="jeux.js"></script>
+</body>
+
+</html>
