@@ -1,28 +1,28 @@
 const questions = [
             {
-                question: "Quelle est la capitale de la France ?",
-                options: ["Londres", "Paris", "Berlin", "Madrid"],
+                question: "Quelles sont les sources d'énergies les plus utilisées dans une smart city ? ",
+                options: ["Thermique", "Hydrolique", "Solaire", "Nucléaire"],
+                correct: 2
+            },
+            {
+                question: "Qu'est ce qu'une smart city ?",
+                options: ["Une villes uniquement composée de gratte ciel", "Une ville qui utilise les technologies numériques pour améliorer la vie des habitants", "Une ville sans voitures", "Une ville touristique"],
                 correct: 1
             },
             {
-                question: "Combien de continents y a-t-il sur Terre ?",
-                options: ["5", "6", "7", "8"],
-                correct: 2
+                question: "Qu'est ce qui est souvent utilisé dans une smart city pour collecter des informations ?",
+                options: ["Des capteurs connectés", "Des livres", "Des journaux papier", "Des panneaux publicitaires"],
+                correct: 0
             },
             {
-                question: "Qui a peint la Joconde ?",
-                options: ["Vincent Van Gogh", "Pablo Picasso", "Leonardo da Vinci", "Claude Monet"],
-                correct: 2
+                question: "Quel est un exemple de trasport dans une smart city ?",
+                options: ["Les transports éléctriques ", "Les calèches", "Les voitures volantes", "Fusée"],
+                correct: 0
             },
             {
-                question: "Quelle est la planète la plus proche du Soleil ?",
-                options: ["Vénus", "Mercure", "Mars", "Terre"],
+                question: "Pourquoi les smart cities utilisent-elles des données ?",
+                options: ["Pour décorer la ville", "Pour améliorer les services et l'organisation", "Pour ralentir les transport", "Pour supprimer internet"],
                 correct: 1
-            },
-            {
-                question: "En quelle année l'homme a-t-il marché sur la Lune pour la première fois ?",
-                options: ["1965", "1967", "1969", "1971"],
-                correct: 2
             }
         ];
 
