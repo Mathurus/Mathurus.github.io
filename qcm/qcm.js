@@ -15,12 +15,12 @@ const questions = [
                 correct: 0
             },
             {
-                question: "Quel est un exemple de trasport dans une smart city ?",
+                question: "Quel est un exemple de transport dans une smart city ?",
                 options: ["Les transports éléctriques ", "Les calèches", "Les voitures volantes", "Fusée"],
                 correct: 0
             },
             {
-                question: "Pourquoi les smart cities utilisent-elles des données ?",
+                question: "Pourquoi les smart city utilisent-elles des données ?",
                 options: ["Pour décorer la ville", "Pour améliorer les services et l'organisation", "Pour ralentir les transport", "Pour supprimer internet"],
                 correct: 1
             }
