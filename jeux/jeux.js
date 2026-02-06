@@ -89,7 +89,7 @@ function acheterMateriel(type) {
         pollution -= 15
         transportNiveau = 1;
         transportAchete = true;
-        afficherMessage('🚌 Transport en commun acheté ! -5 énergie, +5 satisfaction', 'success');
+        afficherMessage('🚌 Transport en commun acheté ! -5 énergie, +5 satisfaction, -15 pollution', 'success');
     } else {
         afficherMessage('❌ Vous avez déjà cet objet !', 'error');
     }
@@ -125,7 +125,57 @@ function ameliorerMateriel(type) {
         transportNiveau += nbNiveaux;
         afficherMessage(`⬆️ Transports améliorés de ${nbNiveaux} niveau(x) pour ${cout}€`, 'success');
     }
-
+    if (type === "eolienne" && nbNiveaux === "1") {
+        energie += 5;
+        pollution += 10;
+    }
+    if (type === "eolienne" && nbNiveaux === "2") {
+        energie += 10; 
+        pollution += 15;
+    }
+    if (type === "eolienne" && nbNiveaux === "3") {
+        energie += 20;
+        pollution += 18;
+    }
+    if (type === "eolienne" && nbNiveaux === "4") {
+        energie += 40;
+        pollution += 20;
+    }
+    if (type === "usine" && nbNiveaux === "1") {
+        energie += 5;
+        pollution += 5;
+    }
+    if (type === "usine" && nbNiveaux === "2") {
+        energie += 10;
+        pollution += 10;
+    }
+    if (type === "usine" && nbNiveaux === "3") {
+        energie += 20;
+        pollution += 13;
+    }
+    if (type === "usine" && nbNiveaux === "4") {
+        energie += 40;
+        pollution += 15;
+    }
+    if (type === "transport" && nbNiveaux === "1") {
+        energie += 5;
+        pollution -= 2;
+    }
+    
+    if (type === "transport" && nbNiveaux === "2") {
+        energie += 10;
+        pollution -= 4;
+    }
+    
+    if (type === "transport" && nbNiveaux === "3") {
+        energie += 20;
+        pollution -= 8;
+    }
+    
+    if (type === "transport" && nbNiveaux === "4") {
+        energie += 25;
+        pollution -= 15;
+    }
     mettreAJourStats();
 }
 
@@ -137,7 +187,7 @@ function passerJour() {
     jour++;
     satisfaction += 10;
     energie += 10;
-    pollution -= 5;
+    pollution -= 2;
 
     if (transportNiveau > 0) {
         pollution -= 15;
